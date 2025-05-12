@@ -1,78 +1,161 @@
-/* Reset and base styles */
+/* Base reset and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
+  /* Fun, Engaging Font and Colors */
   body {
-    font-family: 'Times New Roman', serif; /* Classy font */
-    background-color: #ffe6f0;
+    font-family: 'Times New Roman', serif;
+    background-color: #f7a0b0; /* Updated background color */
     color: #4d004d;
     line-height: 1.6;
+    cursor: url('https://cdn.jsdelivr.net/gh/kevin-powell/cursors/cute-heart/cute-heart.cur'), auto;
   }
   
+  /* Header Section Styling */
   header {
-    background-color: #ffb6c1;
-    padding: 20px;
+    background-color: #fa7d7d; /* Updated header color */
+    padding: 30px 20px;
     text-align: center;
-    border-bottom: 4px dotted #ff69b4;
+    border-bottom: 5px dotted #ff69b4;
+    animation: fadeIn 2s ease-out;
   }
   
   header h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     color: #fff;
-    text-shadow: 1px 1px 3px #d63384;
+    text-shadow: 1px 1px 5px #ff1493, 0 0 25px #ff1493, 0 0 5px #ff1493;
+    letter-spacing: 2px;
+    animation: bounce 1s ease-in-out infinite;
   }
   
+  /* Navigation Bar Styling */
   nav ul {
     list-style: none;
     margin-top: 15px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
   }
   
   nav a {
     text-decoration: none;
     color: #fff;
     background-color: #ff69b4;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 1.1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
   
   nav a:hover, nav a.active {
     background-color: #ff1493;
+    transform: scale(1.1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    animation: shake 0.5s ease-in-out;
   }
   
+  /* Hero Section */
   .hero {
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
+    animation: fadeIn 3s ease-out;
   }
   
   .hero h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 20px;
     color: #d63384;
+    animation: slideIn 2s ease-in-out;
   }
   
   .hero p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 20px;
+    animation: fadeInUp 2s ease-out;
   }
   
   .banner-img {
     max-width: 100%;
     border-radius: 20px;
     border: 3px dashed #ff69b4;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
   }
   
+  .banner-img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Footer Section */
   footer {
-    background-color: #ffb6c1;
+    background-color: #fa7d7d; /* Matching footer to header color */
     text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
+    padding: 20px;
+    font-size: 1em;
     color: #fff;
-    margin-top: 30px;
+    margin-top: 40px;
+    animation: fadeInUp 2s ease-out;
+  }
+  
+  footer p {
+    font-size: 1.2em;
+    animation: fadeInUp 2s ease-out;
+  }
+  
+  /* Custom Animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  @keyframes slideIn {
+    0% { transform: translateX(-50%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Button Hover Animations */
+  button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #ff69b4;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #ff1493;
+    transform: scale(1.1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  button:focus {
+    outline: none;
   }
