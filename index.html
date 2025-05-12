@@ -38,8 +38,8 @@
   <!-- NextParticle Library -->
   <script src="https://cdn.jsdelivr.net/gh/nextparticle/nextparticle/dist/nextparticle.min.js"></script>
 
-  <!-- Custom Particle Script -->
-  <script>
+<script>
+  window.onload = function () {
     const settings = {
       particleGap: 2,
       particleSize: 1.5,
@@ -49,18 +49,24 @@
       layerDistance: 2
     };
 
-    const heart = new NextParticle({
-      renderer: 'webgl',
-      image: document.querySelector('#valentines'),
-      width: window.innerWidth,
-      height: window.innerHeight,
-      particleGap: settings.particleGap,
-      particleSize: settings.particleSize,
-      mouseForce: settings.mouseForce,
-      noise: settings.noise,
-      layerCount: settings.layerCount,
-      layerDistance: settings.layerDistance
-    });
-  </script>
+    const heartImage = document.querySelector('#valentines');
+
+    // Make sure the image is loaded before starting the animation
+    heartImage.onload = function () {
+      const heart = new NextParticle({
+        renderer: 'webgl',
+        image: heartImage,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        particleGap: settings.particleGap,
+        particleSize: settings.particleSize,
+        mouseForce: settings.mouseForce,
+        noise: settings.noise,
+        layerCount: settings.layerCount,
+        layerDistance: settings.layerDistance
+      });
+    };
+  };
+</script>
 </body>
 </html>
