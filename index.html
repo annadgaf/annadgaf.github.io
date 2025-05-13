@@ -2,25 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 </head>
 <body>
   <div id="tsparticles"></div>
 
-  <nav class="floating-nav">
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="hero">
-    <h1>Welcome to My Portfolio</h1>
+    <h1>My Portfolio</h1>
   </main>
 
   <footer>
@@ -33,18 +35,19 @@
         fullScreen: { enable: true, zIndex: -1 },
         background: { color: "#f7d0d7" },
         particles: {
-          number: { value: 150 },
+          number: { value: 100 },
           color: { value: "#d08f8f" },
-          shape: {
-            type: ["circle", "line"],  <!-- Circles and lines -->
-          },
-          opacity: { value: 0.8 },
+          shape: { type: ["circle", "line"] },
+          opacity: { value: 0.7 },
           size: { value: 6, random: { enable: true, minimumValue: 3 } },
-          move: {
+          links: {
             enable: true,
-            speed: 1.5,
-            outModes: "bounce",
-          }
+            distance: 130,
+            color: "#d08f8f",
+            opacity: 0.4,
+            width: 1
+          },
+          move: { enable: true, speed: 1, outModes: "bounce" }
         },
         interactivity: {
           events: { onHover: { enable: true, mode: "repulse" }, resize: true },
