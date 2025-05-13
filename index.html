@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.4/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <!-- Particle background -->
+  <!-- Particles background -->
   <div id="tsparticles"></div>
 
-  <!-- Navigation above the title -->
+  <!-- Navigation -->
   <nav class="main-nav">
     <ul>
       <li><a href="#">Home</a></li>
@@ -22,58 +23,76 @@
     </ul>
   </nav>
 
-  <!-- Centered Title -->
+  <!-- Title -->
   <header>
     <h1 class="main-title">My Portfolio</h1>
   </header>
 
-  <!-- Bottom Info -->
-  <main class="bottom-info">
+  <!-- Bottom Section -->
+  <div class="bottom-info">
     <h2>Website about the little things I do (๑˃ᴗ˂)ﻭ</h2>
-    <p>Made with <3 by me (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)</p>
-    <footer>
-      <p>© 2025 My Cute Portfolio. All rights reserved.</p>
-    </footer>
-  </main>
+    <p>Made with &lt;3 by me (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)</p>
+  </div>
 
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My Cute Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- Particle Configuration -->
   <script>
     tsParticles.load("tsparticles", {
-      fpsLimit: 60,
       background: {
-        color: "#fa9e9e"
+        color: {
+          value: "#fa9e9e"
+        }
+      },
+      fpsLimit: 60,
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: "repulse"
+          },
+          resize: true
+        },
+        modes: {
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          }
+        }
       },
       particles: {
-        number: {
-          value: 40,
-          density: { enable: true, area: 800 }
+        color: {
+          value: "#fffafc"
         },
-        color: { value: "#fff0f0" },
-        shape: { type: "circle" },
-        opacity: {
-          value: 0.8,
-          random: true
-        },
-        size: {
-          value: 5,
-          random: true
+        links: {
+          enable: false
         },
         move: {
-          enable: false,
-          outModes: { default: "out" },
-          speed: 1
-        },
-        hover: {
+          direction: "none",
           enable: true,
-          mode: "repulse"
+          outModes: "bounce",
+          random: false,
+          speed: 0.8,
+          straight: false
         },
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "repulse"
-            },
-            resize: true
-          }
+        number: {
+          density: {
+            enable: true,
+            area: 800
+          },
+          value: 60
+        },
+        opacity: {
+          value: 0.6
+        },
+        shape: {
+          type: "circle"
+        },
+        size: {
+          value: { min: 1, max: 3 }
         }
       },
       detectRetina: true
