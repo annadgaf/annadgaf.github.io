@@ -10,24 +10,20 @@
 <body>
   <div id="tsparticles"></div>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About Me</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="floating-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About Me</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <main class="hero">
     <h1>About Me</h1>
   </main>
 
   <footer>
-    <p>Website about the little things I do (๑˃ᴗ˂)ﻭ</p>
-    <p>Made with <3 by me (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)</p>
     <p>© 2025 BathSpa University. All rights reserved.</p>
   </footer>
 
@@ -35,39 +31,19 @@
     window.addEventListener("load", () => {
       tsParticles.load("tsparticles", {
         fullScreen: { enable: true, zIndex: -1 },
+        background: { color: "#fff3f3" },
         particles: {
-          number: { value: 120 },
-          color: { value: "#ffb6c1" },
-          shape: { type: "circle" },
+          number: { value: 100 },
+          color: { value: "#f8c4d9" },
+          shape: { type: ["circle", "square", "triangle", "star", "heart"] },
           opacity: { value: 0.7 },
-          size: { value: 3.5, random: true },
-          links: {
-            enable: true,
-            distance: 120,
-            color: "#f8c4d9",
-            opacity: 0.5,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 0.8,
-            direction: "none",
-            outModes: "bounce"
-          }
+          size: { value: 6, random: { enable: true, minimumValue: 3 } },
+          move: { enable: true, speed: 1, outModes: "bounce" }
         },
         interactivity: {
-          events: {
-            onHover: { enable: true, mode: "repulse" },
-            resize: true
-          },
-          modes: {
-            repulse: {
-              distance: 100,
-              duration: 0.4
-            }
-          }
-        },
-        background: { color: "#fa7d7d" }
+          events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+          modes: { repulse: { distance: 100, duration: 0.4 } }
+        }
       });
     });
   </script>

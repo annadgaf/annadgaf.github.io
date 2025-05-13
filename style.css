@@ -1,4 +1,4 @@
-/* Reset & Base Styles */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,62 +7,63 @@
 
 body {
   font-family: 'Times New Roman', serif;
-  background-color: #fa7d7d;
-  color: #fff;
+  background-color: #fff3f3; /* clean base */
+  color: #5b2c3d;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Floating Animation */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-header {
+/* Floating Nav */
+.floating-nav {
   width: 100%;
-  background-color: #f6a2a2;
-  padding: 10px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 20px;
   z-index: 100;
-}
-
-nav ul {
   display: flex;
   justify-content: center;
-  list-style: none;
-  gap: 20px;
-  flex-wrap: wrap;
+  animation: floatNav 3s ease-in-out infinite;
 }
 
-nav a {
+.floating-nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  background: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(5px);
+}
+
+.floating-nav a {
   text-decoration: none;
-  color: #fff;
+  color: #5b2c3d;
   font-weight: bold;
   padding: 8px 16px;
   border-radius: 20px;
-  transition: background-color 0.3s;
-  animation: float 3s ease-in-out infinite;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-nav a:hover,
-nav a.active {
+.floating-nav a:hover,
+.floating-nav a.active {
   background-color: #f8c4d9;
-  color: #5b2c3d;
+  color: #fff;
 }
 
+@keyframes floatNav {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Hero Section */
 .hero {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px 20px;
+  padding-top: 80px;
 }
 
 .hero h1 {
@@ -72,26 +73,31 @@ nav a.active {
   border-radius: 30px;
   font-size: 2.5rem;
   font-weight: bold;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  animation: float 4s ease-in-out infinite;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  animation: floatTitle 3s ease-in-out infinite;
 }
 
+@keyframes floatTitle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #f6a2a2;
   font-size: 0.9rem;
-  color: #fff;
+  color: #5b2c3d;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 1.8rem;
     padding: 15px 25px;
   }
 
-  nav ul {
+  .floating-nav ul {
     flex-direction: column;
     gap: 10px;
   }
