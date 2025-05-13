@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+  <div id="tsparticles"></div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <h1>Gallery</h1>
+  </main>
+
+  <footer>
+    <p>Website about the little things I do (๑˃ᴗ˂)ﻭ</p>
+    <p>Made with <3 by me (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)</p>
+    <p>© 2025 BathSpa University. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      tsParticles.load("tsparticles", {
+        fullScreen: { enable: true, zIndex: -1 },
+        particles: {
+          number: { value: 120 },
+          color: { value: "#ffb6c1" },
+          shape: { type: "circle" },
+          opacity: { value: 0.7 },
+          size: { value: 3.5, random: true },
+          links: {
+            enable: true,
+            distance: 120,
+            color: "#f8c4d9",
+            opacity: 0.5,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 0.8,
+            direction: "none",
+            outModes: "bounce"
+          }
+        },
+        interactivity: {
+          events: {
+            onHover: { enable: true, mode: "repulse" },
+            resize: true
+          },
+          modes: {
+            repulse: {
+              distance: 100,
+              duration: 0.4
+            }
+          }
+        },
+        background: { color: "#fa7d7d" }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Home - My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- tsParticles Library -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <!-- Particle Background -->
   <div id="tsparticles"></div>
 
   <header>
@@ -17,7 +15,6 @@
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -31,41 +28,31 @@
   <footer>
     <p>Website about the little things I do (๑˃ᴗ˂)ﻭ</p>
     <p>Made with <3 by me (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)</p>
-    <p>© 2025 My Cute Portfolio. All rights reserved.</p>
+    <p>© 2025 BathSpa University. All rights reserved.</p>
   </footer>
 
-  <!-- Particle Init Script -->
   <script>
     window.addEventListener("load", () => {
       tsParticles.load("tsparticles", {
         fullScreen: { enable: true, zIndex: -1 },
         particles: {
-          number: { value: 60 },
+          number: { value: 120 },
           color: { value: "#ffb6c1" },
           shape: { type: "circle" },
-          opacity: {
-            value: 0.6,
-            anim: { enable: false }
-          },
-          size: {
-            value: 3,
-            random: true
-          },
+          opacity: { value: 0.7 },
+          size: { value: 3.5, random: true },
           links: {
             enable: true,
             distance: 120,
             color: "#f8c4d9",
-            opacity: 0.4,
+            opacity: 0.5,
             width: 1
           },
           move: {
             enable: true,
-            speed: 0.5,
+            speed: 0.8,
             direction: "none",
-            outModes: "bounce",
-            attract: { enable: false },
-            straight: false,
-            random: false
+            outModes: "bounce"
           }
         },
         interactivity: {
@@ -80,9 +67,7 @@
             }
           }
         },
-        background: {
-          color: "#fa7d7d"
-        }
+        background: { color: "#fa7d7d" }
       });
     });
   </script>
