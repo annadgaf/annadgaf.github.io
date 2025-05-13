@@ -31,13 +31,13 @@
     window.addEventListener("load", () => {
       tsParticles.load("tsparticles", {
         fullScreen: { enable: true, zIndex: -1 },
-        background: { color: "#fff3f3" },
+        background: { color: "#ffe6ec" },
         particles: {
           number: { value: 100 },
           color: { value: "#f8c4d9" },
-          shape: { type: ["circle", "square", "triangle", "star", "heart"] },
+          shape: { type: ["heart", "line"] },
           opacity: { value: 0.7 },
-          size: { value: 6, random: { enable: true, minimumValue: 3 } },
+          size: { value: 5, random: true },
           move: { enable: true, speed: 1, outModes: "bounce" }
         },
         interactivity: {

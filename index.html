@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - My Portfolio</title>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <!-- Particle Background -->
   <div id="tsparticles"></div>
 
-  <!-- Floating Navigation -->
   <nav class="floating-nav">
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
@@ -21,49 +19,40 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
   <main class="hero">
-    <h1>My Portfolio</h1>
+    <h1>Welcome to My Portfolio</h1>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 BathSpa University. All rights reserved.</p>
   </footer>
 
-  <!-- Particles Init -->
   <script>
     window.addEventListener("load", () => {
       tsParticles.load("tsparticles", {
         fullScreen: { enable: true, zIndex: -1 },
-        background: {
-          color: "#fff3f3" // one solid base color
-        },
+        background: { color: "#f7d0d7" },  <!-- Lighter pink -->
         particles: {
           number: { value: 100 },
-          color: { value: "#f8c4d9" }, // cute visible particles
-          shape: {
-            type: ["circle", "square", "triangle", "star", "heart"]
+          color: { value: "#f8c4d9" },
+          shape: { 
+            type: "polygon",
+            polygon: {
+              sides: 4, 
+              angle: 45 
+            }
           },
           opacity: { value: 0.7 },
-          size: {
-            value: 6,
-            random: { enable: true, minimumValue: 3 }
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            outModes: "bounce"
+          size: { value: 5, random: { enable: true, minimumValue: 3 } },
+          move: { 
+            enable: true, 
+            speed: 1, 
+            outModes: "bounce" 
           }
         },
         interactivity: {
-          events: {
-            onHover: { enable: true, mode: "repulse" },
-            resize: true
-          },
-          modes: {
-            repulse: { distance: 100, duration: 0.4 }
-          }
+          events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+          modes: { repulse: { distance: 100, duration: 0.4 } }
         }
       });
     });
