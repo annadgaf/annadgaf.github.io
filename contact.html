@@ -66,12 +66,64 @@
       });
     });
 
-    let nextPage = "index.html"; // loops back to Home
-    window.addEventListener("scroll", () => {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        setTimeout(() => window.location.href = nextPage, 500);
+     // Particle background
+  window.addEventListener("load", () => {
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: true, zIndex: -1 },
+      background: { color: "#f7d0d7" },
+      particles: {
+        number: { value: 80 },
+        color: { value: "#c25e77" },
+        shape: { type: ["circle", "line"] },
+        opacity: { value: 0.6 },
+        size: { value: 5, random: { enable: true, minimumValue: 3 } },
+        links: {
+          enable: true,
+          distance: 120,
+          color: "#c25e77",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          outModes: "bounce"
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 }
+        }
       }
     });
+  });
+
+  // Auto-scroll to next page using IntersectionObserver
+  const nextPage = {
+    "index.html": "about.html",
+    "about.html": "gallery.html",
+    "gallery.html": "contact.html",
+    "contact.html": "index.html"
+  };
+
+  const sentinel = document.createElement("div");
+  sentinel.style.height = "1px";
+  document.body.appendChild(sentinel);
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      const current = location.pathname.split("/").pop();
+      const next = nextPage[current] || "index.html";
+      setTimeout(() => (window.location.href = next), 500);
+    }
+  }, { threshold: 1.0 });
+
+  observer.observe(sentinel);
   </script>
 </body>
 </html>
