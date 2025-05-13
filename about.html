@@ -9,7 +9,6 @@
 </head>
 <body>
   <div id="tsparticles"></div>
-
   <header>
     <nav>
       <ul>
@@ -20,81 +19,73 @@
       </ul>
     </nav>
   </header>
-
   <main class="hero">
-    <h1>About</h1>
+    <h1>About Me</h1>
   </main>
-
   <footer>
     <p>© 2025 BathSpa University. All rights reserved.</p>
   </footer>
 
   <script>
-  // Particle background
-  window.addEventListener("load", () => {
-    tsParticles.load("tsparticles", {
-      fullScreen: { enable: true, zIndex: -1 },
-      background: { color: "#f7d0d7" },
-      particles: {
-        number: { value: 80 },
-        color: { value: "#c25e77" },
-        shape: { type: ["circle", "line"] },
-        opacity: { value: 0.6 },
-        size: { value: 5, random: { enable: true, minimumValue: 3 } },
-        links: {
-          enable: true,
-          distance: 120,
-          color: "#c25e77",
-          opacity: 0.4,
-          width: 1
+    window.addEventListener("load", () => {
+      tsParticles.load("tsparticles", {
+        fullScreen: { enable: true, zIndex: -1 },
+        background: { color: "#f7d0d7" },
+        particles: {
+          number: { value: 80 },
+          color: { value: "#c25e77" },
+          shape: { type: ["circle", "line"] },
+          opacity: { value: 0.6 },
+          size: { value: 5, random: { enable: true, minimumValue: 3 } },
+          links: {
+            enable: true,
+            distance: 120,
+            color: "#c25e77",
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            outModes: "bounce"
+          }
         },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          outModes: "bounce"
+        interactivity: {
+          events: {
+            onHover: { enable: true, mode: "repulse" },
+            resize: true
+          },
+          modes: {
+            repulse: { distance: 100, duration: 0.4 }
+          }
         }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "repulse" },
-          resize: true
-        },
-        modes: {
-          repulse: { distance: 100, duration: 0.4 }
-        }
-      }
+      });
     });
-  });
 
-  // Auto-scroll to next page
-  const nextPage = {
-    "index.html": "about.html",
-    "about.html": "gallery.html",
-    "gallery.html": "contact.html",
-    "contact.html": "index.html"
-  };
-
-  const sentinel = document.createElement("div");
-  sentinel.style.height = "1px";
-  document.body.appendChild(sentinel);
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    if (entries[0].isIntersecting) {
-      // Stop observing immediately to prevent repeated triggering
-      obs.disconnect();
-
-      const current = location.pathname.split("/").pop() || "index.html";
-      const next = nextPage[current] || "index.html";
-
-      // Wait a moment before navigating to next page
-      setTimeout(() => {
-        window.location.href = next;
-      }, 500);
-    }
-  }, { threshold: 1.0 });
-
-  observer.observe(sentinel);
-</script>
+    // Scroll-based navigation trigger
+    let userHasScrolled = false;
+    window.addEventListener("scroll", () => { userHasScrolled = true; });
+    setTimeout(() => {
+      const sentinel = document.createElement("div");
+      sentinel.style.height = "1px";
+      document.body.appendChild(sentinel);
+      const observer = new IntersectionObserver((entries, obs) => {
+        if (entries[0].isIntersecting && userHasScrolled) {
+          obs.disconnect();
+          const nextPage = {
+            "index.html": "about.html",
+            "about.html": "gallery.html",
+            "gallery.html": "contact.html",
+            "contact.html": "index.html"
+          };
+          const current = location.pathname.split("/").pop() || "index.html";
+          const next = nextPage[current] || "index.html";
+          setTimeout(() => { window.location.href = next; }, 500);
+        }
+      }, { threshold: 1.0 });
+      observer.observe(sentinel);
+    }, 100);
+  </script>
 </body>
 </html>
