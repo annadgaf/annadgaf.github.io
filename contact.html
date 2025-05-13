@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - My Portfolio</title>
+  <title>About Me</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 </head>
@@ -13,14 +13,14 @@
   <nav class="floating-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="about.html" class="active">About Me</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <main class="hero">
-    <h1>Contact</h1>
+    <h1>Contact Information</h1>
   </main>
 
   <footer>
@@ -31,14 +31,24 @@
     window.addEventListener("load", () => {
       tsParticles.load("tsparticles", {
         fullScreen: { enable: true, zIndex: -1 },
-        background: { color: "#ffe6ec" },
+        background: { color: "#f7d0d7" },  
         particles: {
-          number: { value: 100 },
-          color: { value: "#f8c4d9" },
-          shape: { type: ["heart", "line"] },
-          opacity: { value: 0.7 },
-          size: { value: 5, random: true },
-          move: { enable: true, speed: 1, outModes: "bounce" }
+          number: { value: 150 },  
+          color: { value: "#d08f8f" },  
+          shape: { 
+            type: "polygon",  
+            polygon: {
+              sides: 4,  
+              angle: 45  
+            }
+          },
+          opacity: { value: 0.8 },
+          size: { value: 6, random: { enable: true, minimumValue: 3 } },
+          move: { 
+            enable: true, 
+            speed: 1.5,  <!-- Increased speed for more dynamic movement -->
+            outModes: "bounce" 
+          }
         },
         interactivity: {
           events: { onHover: { enable: true, mode: "repulse" }, resize: true },
