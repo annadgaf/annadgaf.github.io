@@ -1,111 +1,113 @@
-/* === Base reset === */
+/* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: #fa9e9e;
+  color: #fff8f0;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Particle background */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  margin: 20px auto 0;
+  width: fit-content;
+  backdrop-filter: blur(5px);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background: #ffc1c1;
+  border-radius: 25px;
+  color: #a24444;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.main-nav a:hover {
+  background: #fff0f0;
+  color: #d6336c;
+}
+
+/* Title Styling */
+header {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: #ffdada;
+  padding: 20px 40px;
+  border-radius: 30px;
+  display: inline-block;
+  color: #a24444;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Bottom info section */
+.bottom-info {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.bottom-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.bottom-info p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #ffe6e6;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 2rem;
+    padding: 15px 25px;
   }
-  
-  /* === Background particles container === */
-  #particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0;
-    left: 0;
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  /* === Body styling === */
-  body {
-    font-family: 'Times New Roman', serif;
-    background-color: #fa9e9e; /* pastel pink */
-    color: #fff8f0; /* soft text color */
-    line-height: 1.6;
-    min-height: 100vh;
-    padding: 0 20px;
-  }
-  
-  /* === Header === */
-  header {
-    text-align: center;
-    padding: 40px 20px 20px;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    color: #fff8f0;
-    margin-bottom: 10px;
-  }
-  
-  /* === Navigation === */
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #ffe6e6;
-    background-color: #f08e8e;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-  }
-  
-  nav a:hover,
-  nav a.active {
-    background-color: #fbdada;
-    color: #a24444;
-  }
-  
-  /* === Main Hero Section === */
-  .hero {
-    text-align: center;
-    margin: 50px auto;
-    max-width: 800px;
-  }
-  
-  .hero h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #fff0f0;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    color: #fff0f0;
-  }
-  
-  /* === Footer === */
-  footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    color: #ffe6e6;
-    margin-top: 80px;
-  }
-  
-  /* === Buttons (if needed later) === */
-  button {
-    background-color: #f79d9d;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #ffd1d1;
-    color: #a24444;
-  }
-  
-  /* === Smooth transitions for links and nav === */
-  a,
-  button {
-    transition: all 0.3s ease-in-out;
-  }
+}

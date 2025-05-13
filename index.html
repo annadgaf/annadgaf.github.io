@@ -2,80 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>>o< My Portfolio >o<</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
 <body>
   <!-- Particle background -->
-  <div id="particles-js"></div>
+  <div id="tsparticles"></div>
 
+  <!-- Navigation above the title -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Centered Title -->
   <header>
-    <h1>>o< My Portfolio >o<</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <h1 class="main-title">My Portfolio</h1>
   </header>
 
-  <main class="hero">
+  <!-- Bottom Info -->
+  <main class="bottom-info">
     <h2>Website about the little things I do (๑˃ᴗ˂)ﻭ</h2>
     <p>Made with <3 by me (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)</p>
+    <footer>
+      <p>© 2025 My Cute Portfolio. All rights reserved.</p>
+    </footer>
   </main>
 
-  <footer>
-    <p>© 2025 My Cute Portfolio. All rights reserved.</p>
-  </footer>
-
-  <!-- Load particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {
+    tsParticles.load("tsparticles", {
+      fpsLimit: 60,
+      background: {
+        color: "#fa9e9e"
+      },
       particles: {
         number: {
           value: 40,
-          density: { enable: true, value_area: 800 }
+          density: { enable: true, area: 800 }
         },
-        color: { value: "#fff0f5" },
-        shape: {
-          type: "image",
-          image: {
-            src: "images/heart.png",
-            width: 100,
-            height: 100
-          }
-        },
+        color: { value: "#fff0f0" },
+        shape: { type: "circle" },
         opacity: {
-          value: 0.6,
+          value: 0.8,
           random: true
         },
         size: {
-          value: 12,
+          value: 5,
           random: true
         },
         move: {
-          enable: true,
-          speed: 1.5,
-          direction: "none",
-          out_mode: "out"
-        }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" }
+          enable: false,
+          outModes: { default: "out" },
+          speed: 1
         },
-        modes: {
-          repulse: { distance: 100 },
-          push: { particles_nb: 4 }
+        hover: {
+          enable: true,
+          mode: "repulse"
+        },
+        interactivity: {
+          events: {
+            onHover: {
+              enable: true,
+              mode: "repulse"
+            },
+            resize: true
+          }
         }
       },
-      retina_detect: true
+      detectRetina: true
     });
   </script>
 </body>
