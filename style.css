@@ -1,115 +1,149 @@
-body, html {
+/* Global Reset and Font */
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: 'Georgia', serif;
+  box-sizing: border-box;
   scroll-behavior: smooth;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  font-family: 'Georgia', serif;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+body {
+  background: linear-gradient(135deg, #f27474, #ffb6b6);
   color: #fff;
-  overflow-x: hidden;
   position: relative;
 }
 
-#particles-js {
+/* Navigation */
+nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* Navbar */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 1rem 0;
-  z-index: 10;
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
-nav a {
-  color: white;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav ul li a {
   text-decoration: none;
+  color: #fff;
   font-size: 1.1rem;
-  transition: transform 0.2s ease, color 0.3s;
-  border: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-nav a:hover {
-  transform: scale(1.2);
-  color: #ffe3ec;
+nav ul li a:hover {
+  color: #ffdfdf;
 }
 
-/* Hero Section (Home Page) */
+/* Hero Section */
 .hero {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
   height: 100vh;
-  padding: 5% 10%;
-  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.hero-text {
+.hero .text {
   flex: 1;
-  font-size: 2rem;
-  line-height: 1.4;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  max-width: 50%;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  margin: 0;
-  color: white;
-}
-
-.hero img {
+.hero .image {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .image img {
+  max-width: 100%;
   max-height: 90vh;
   object-fit: contain;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Section Styling */
-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-/* About / Gallery / Contact Text */
-.content {
-  max-width: 800px;
-  font-size: 1.2rem;
-  color: white;
-}
-
-/* Scroll Snap for Sections */
-html {
+/* Scroll Snap */
+body {
   scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
-section {
-  scroll-snap-align: start;
-}
-
-/* Footer (Only in Contact Page) */
+/* Footer for Contact Page */
 footer {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
   text-align: center;
-  font-size: 1rem;
-  color: white;
-  opacity: 0.8;
+  padding: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Particles Container */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+/* Section Style (for about, gallery, contact) */
+section.content-section {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Make sure text is readable */
+h1, h2, h3, p {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero .text, .hero .image {
+    max-width: 100%;
+  }
+  nav ul {
+    gap: 20px;
+  }
+  .hero .text {
+    font-size: 2rem;
+  }
 }

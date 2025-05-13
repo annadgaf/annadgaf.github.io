@@ -5,22 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anna Reyes - Home</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div id="particles-js"></div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
 
   <section class="hero">
-    <div class="text">
-      Anna Marielle Calangian Reyes
+    <div class="hero-text">
+      <h1>Anna Marielle Calangian Reyes</h1>
     </div>
-    <img src="anna.jpg" alt="Anna Marielle Calangian Reyes" />
+    <div class="hero-image">
+      <img src="anna.jpg" alt="Anna Marielle Calangian Reyes" />
+    </div>
   </section>
+
+  <a href="about.html" class="scroll-down">▼</a>
 
   <script src="particles.min.js"></script>
   <script>
@@ -40,22 +47,25 @@
         },
         move: {
           enable: true,
-          speed: 2,
+          speed: 1,
           direction: "none",
           out_mode: "out",
           attract: {
-            enable: false
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
           }
         }
       },
       interactivity: {
+        detect_on: "canvas",
         events: {
           onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" }
+          onclick: { enable: false, mode: "push" },
+          resize: true
         },
         modes: {
           repulse: { distance: 100 },
-          push: { particles_nb: 4 }
         }
       },
       retina_detect: true
