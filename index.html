@@ -3,35 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anna Marielle Calangian Reyes</title>
+  <title>Anna Reyes - Home</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div id="particles-js"></div>
-
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <a href="#">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <main class="hero">
-    <div class="left">
-      <h1>Anna Marielle Calangian Reyes</h1>
+  <section class="hero">
+    <div class="text">
+      Anna Marielle Calangian Reyes
     </div>
-    <div class="right">
-      <img src="anna.jpg" alt="Anna Marielle Calangian Reyes" />
-    </div>
-  </main>
+    <img src="anna.jpg" alt="Anna Marielle Calangian Reyes" />
+  </section>
 
-  <!-- particles.js script -->
   <script src="particles.min.js"></script>
   <script>
-    particlesJS('particles-js', {
+    particlesJS("particles-js", {
       particles: {
         number: { value: 80 },
         color: { value: "#ffffff" },
@@ -46,19 +39,23 @@
           width: 1
         },
         move: {
-          enable: false, // disable movement by default
-          speed: 1.5,
+          enable: true,
+          speed: 2,
           direction: "none",
-          out_mode: "out"
+          out_mode: "out",
+          attract: {
+            enable: false
+          }
         }
       },
       interactivity: {
         events: {
-          onhover: { enable: true, mode: "repulse" }, // only move on hover
-          onclick: { enable: false }
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
         },
         modes: {
-          repulse: { distance: 100 }
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
         }
       },
       retina_detect: true

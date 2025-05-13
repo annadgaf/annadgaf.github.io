@@ -3,31 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery</title>
+  <title>Gallery - Anna Reyes</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="particles-js"></div>
-  <header>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <main class="content">
-    <h1>Gallery</h1>
-    <p>This is where your images can be displayed.</p>
-  </main>
+  <section>
+    <h1>Gallery of Anna Marielle Calangian Reyes</h1>
+    <p>Images and content go here.</p>
+  </section>
 
   <script src="particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {
-      particles: {
+    particlesJS("particles-js", {particles: {
         number: { value: 80 },
         color: { value: "#ffffff" },
         shape: { type: "circle" },
@@ -42,9 +37,12 @@
         },
         move: {
           enable: true,
-          speed: 0,
+          speed: 2,
           direction: "none",
-          out_mode: "out"
+          out_mode: "out",
+          attract: {
+            enable: false
+          }
         }
       },
       interactivity: {

@@ -5,29 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Anna Reyes</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div id="particles-js"></div>
-
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <a href="index.html">Home</a>
+    <a href="#">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <main class="content">
-    <h1>About Me</h1>
-    <p>This is the about page. Add your bio and details here.</p>
-  </main>
+  <section>
+    <h1>About Anna Marielle Calangian Reyes</h1>
+    <p>This is the about page.</p>
+  </section>
 
   <script src="particles.min.js"></script>
   <script>
-    particlesJS('particles-js', {
-      particles: {
+    particlesJS("particles-js", {particles: {
         number: { value: 80 },
         color: { value: "#ffffff" },
         shape: { type: "circle" },
@@ -41,19 +36,23 @@
           width: 1
         },
         move: {
-          enable: false,
-          speed: 1.5,
+          enable: true,
+          speed: 2,
           direction: "none",
-          out_mode: "out"
+          out_mode: "out",
+          attract: {
+            enable: false
+          }
         }
       },
       interactivity: {
         events: {
           onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: false }
+          onclick: { enable: true, mode: "push" }
         },
         modes: {
-          repulse: { distance: 100 }
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
         }
       },
       retina_detect: true
