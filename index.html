@@ -37,41 +37,44 @@
   <!-- Scripts -->
   <script src="particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 60 },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.4 },
-        size: { value: 3 },
-        line_linked: {
-          enable: true,
-          distance: 120,
-          color: "#ffffff",
-          opacity: 0.3,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1.5,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out",
-          attract: { enable: false }
-        }
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 60 },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.4 },
+      size: { value: 3 },
+      line_linked: {
+        enable: true,
+        distance: 120,
+        color: "#ffffff",
+        opacity: 0.3,
+        width: 1
       },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: false }
-        },
-        modes: {
-          repulse: { distance: 100 }
-        }
+      move: {
+        enable: true,
+        speed: 1.5,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        attract: { enable: false }
+      }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: false }
       },
-      retina_detect: true
-    });
-  </script>
+      modes: {
+        repulse: {
+          distance: 200,   // Increased from 100 to 200
+          duration: 0.6    // Increased from 0.4 to 0.6
+        }
+      }
+    },
+    retina_detect: true
+  });
+</script>
 </body>
 </html>
