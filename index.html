@@ -2,103 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
   <!-- tsParticles Library -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.4/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 </head>
 <body>
   <!-- Particle Background -->
   <div id="tsparticles"></div>
 
-  <!-- Navigation -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Me</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Centered Title -->
   <header>
-    <h1 class="main-title">My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Bottom Section -->
-  <div class="bottom-info">
-    <h2>Website about the little things I do (๑˃ᴗ˂)ﻭ</h2>
-    <p>Made with &lt;3 by me (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)</p>
-  </div>
+  <main class="hero">
+    <h1>My Portfolio</h1>
+  </main>
 
-  <!-- Footer -->
   <footer>
+    <p>Website about the little things I do (๑˃ᴗ˂)ﻭ</p>
+    <p>Made with <3 by me (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)</p>
     <p>© 2025 My Cute Portfolio. All rights reserved.</p>
   </footer>
 
-  <!-- Particle Config Script -->
+  <!-- Particle Init Script -->
   <script>
-    tsParticles.load("tsparticles", {
-      background: {
-        color: {
-          value: "#fa9e9e"
-        }
-      },
-      fpsLimit: 60,
-      interactivity: {
-        events: {
-          onHover: {
-            enable: true,
-            mode: "connect"
+    window.addEventListener("load", () => {
+      tsParticles.load("tsparticles", {
+        fullScreen: { enable: true, zIndex: -1 },
+        particles: {
+          number: { value: 60 },
+          color: { value: "#ffb6c1" },
+          shape: { type: "circle" },
+          opacity: {
+            value: 0.6,
+            anim: { enable: false }
           },
-          resize: true
-        },
-        modes: {
-          connect: {
+          size: {
+            value: 3,
+            random: true
+          },
+          links: {
+            enable: true,
             distance: 120,
-            links: {
-              opacity: 0.4
+            color: "#f8c4d9",
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 0.5,
+            direction: "none",
+            outModes: "bounce",
+            attract: { enable: false },
+            straight: false,
+            random: false
+          }
+        },
+        interactivity: {
+          events: {
+            onHover: { enable: true, mode: "repulse" },
+            resize: true
+          },
+          modes: {
+            repulse: {
+              distance: 100,
+              duration: 0.4
             }
           }
+        },
+        background: {
+          color: "#fa7d7d"
         }
-      },
-      particles: {
-        number: {
-          value: 100,
-          density: {
-            enable: true,
-            area: 800
-          }
-        },
-        color: {
-          value: "#fff"
-        },
-        shape: {
-          type: "circle"
-        },
-        opacity: {
-          value: 0.5,
-          random: false
-        },
-        size: {
-          value: 2,
-          random: true
-        },
-        move: {
-          enable: false
-        },
-        links: {
-          enable: true,
-          distance: 150,
-          color: "#fff",
-          opacity: 0.3,
-          width: 1
-        }
-      },
-      detectRetina: true
+      });
     });
   </script>
 </body>
