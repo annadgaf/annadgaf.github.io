@@ -30,43 +30,7 @@
   </footer>
 
   <script>
-    window.addEventListener("load", () => {
-      tsParticles.load("tsparticles", {
-        fullScreen: { enable: true, zIndex: -1 },
-        background: { color: "#f7d0d7" },
-        particles: {
-          number: { value: 80 },
-          color: { value: "#c25e77" },
-          shape: { type: ["circle", "line"] },
-          opacity: { value: 0.6 },
-          size: { value: 5, random: { enable: true, minimumValue: 3 } },
-          links: {
-            enable: true,
-            distance: 120,
-            color: "#c25e77",
-            opacity: 0.4,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: "none",
-            outModes: "bounce"
-          }
-        },
-        interactivity: {
-          events: {
-            onHover: { enable: true, mode: "repulse" },
-            resize: true
-          },
-          modes: {
-            repulse: { distance: 100, duration: 0.4 }
-          }
-        }
-      });
-    });
-
-     // Particle background
+  // Particle background
   window.addEventListener("load", () => {
     tsParticles.load("tsparticles", {
       fullScreen: { enable: true, zIndex: -1 },
@@ -103,7 +67,7 @@
     });
   });
 
-  // Auto-scroll to next page using IntersectionObserver
+  // Auto-scroll to next page
   const nextPage = {
     "index.html": "about.html",
     "about.html": "gallery.html",
@@ -115,15 +79,22 @@
   sentinel.style.height = "1px";
   document.body.appendChild(sentinel);
 
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     if (entries[0].isIntersecting) {
-      const current = location.pathname.split("/").pop();
+      // Stop observing immediately to prevent repeated triggering
+      obs.disconnect();
+
+      const current = location.pathname.split("/").pop() || "index.html";
       const next = nextPage[current] || "index.html";
-      setTimeout(() => (window.location.href = next), 500);
+
+      // Wait a moment before navigating to next page
+      setTimeout(() => {
+        window.location.href = next;
+      }, 500);
     }
   }, { threshold: 1.0 });
 
   observer.observe(sentinel);
-  </script>
+</script>
 </body>
 </html>
