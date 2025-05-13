@@ -2,71 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anna Reyes - Home</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- Particle background -->
   <div id="particles-js"></div>
+
+  <!-- Navigation -->
   <nav class="navbar">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
   </nav>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
       <h1>Anna Marielle Calangian Reyes</h1>
     </div>
-    <div class="hero-image">
+    <div class="hero-img">
       <img src="anna.jpg" alt="Anna Marielle Calangian Reyes" />
     </div>
   </section>
 
+  <!-- Scroll Down to About -->
   <a href="about.html" class="scroll-down">▼</a>
 
+  <!-- Scripts -->
   <script src="particles.min.js"></script>
   <script>
-  particlesJS('particles-js', {
-    particles: {
-      number: { value: 80 },
-      color: { value: '#ffffff' },
-      shape: { type: 'circle' },
-      opacity: { value: 0.5 },
-      size: { value: 3 },
-      line_linked: {
-        enable: true,
-        distance: 150,
-        color: '#ffffff',
-        opacity: 0.4,
-        width: 1
-      },
-      move: {
-        enable: false, // <--- Disable auto movement
-        speed: 2,
-        direction: 'none',
-        out_mode: 'out'
-      }
-    },
-    interactivity: {
-      detect_on: 'canvas',
-      events: {
-        onhover: {
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.4 },
+        size: { value: 3 },
+        line_linked: {
           enable: true,
-          mode: 'repulse' // <--- Moves on hover
+          distance: 120,
+          color: "#ffffff",
+          opacity: 0.3,
+          width: 1
         },
-        onclick: { enable: false }
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          attract: { enable: false }
+        }
       },
-      modes: {
-        repulse: { distance: 100 }
-      }
-    },
-    retina_detect: true
-  });
-</script>
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: false }
+        },
+        modes: {
+          repulse: { distance: 100 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
 </html>
