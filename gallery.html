@@ -3,28 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery - Anna</title>
+  <title>Gallery</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="particles-js"></div>
   <header>
-    <nav>
+    <nav class="navbar">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  <main>
+
+  <main class="content">
     <h1>Gallery</h1>
-    <p>This is the Gallery page content.</p>
+    <p>This is where your images can be displayed.</p>
   </main>
+
   <script src="particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {particles: {
+    particlesJS("particles-js", {
+      particles: {
         number: { value: 80 },
         color: { value: "#ffffff" },
         shape: { type: "circle" },
@@ -39,7 +42,7 @@
         },
         move: {
           enable: true,
-          speed: 2,
+          speed: 0,
           direction: "none",
           out_mode: "out"
         }
@@ -47,10 +50,11 @@
       interactivity: {
         events: {
           onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: false }
+          onclick: { enable: true, mode: "push" }
         },
         modes: {
-          repulse: { distance: 100 }
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
         }
       },
       retina_detect: true

@@ -3,28 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Anna</title>
+  <title>About - Anna Reyes</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div id="particles-js"></div>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
     <h1>About Me</h1>
-    <p>This is the About page content.</p>
+    <p>This is the about page. Add your bio and details here.</p>
   </main>
+
   <script src="particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {particles: {
+    particlesJS('particles-js', {
+      particles: {
         number: { value: 80 },
         color: { value: "#ffffff" },
         shape: { type: "circle" },
@@ -38,8 +41,8 @@
           width: 1
         },
         move: {
-          enable: true,
-          speed: 2,
+          enable: false,
+          speed: 1.5,
           direction: "none",
           out_mode: "out"
         }
@@ -58,5 +61,4 @@
   </script>
 </body>
 </html>
-
 

@@ -5,33 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anna Marielle Calangian Reyes</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div id="particles-js"></div>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-  <section class="hero">
-    <div class="hero-left">
+  <main class="hero">
+    <div class="left">
       <h1>Anna Marielle Calangian Reyes</h1>
     </div>
-    <div class="hero-right">
+    <div class="right">
       <img src="anna.jpg" alt="Anna Marielle Calangian Reyes" />
     </div>
-  </section>
+  </main>
 
+  <!-- particles.js script -->
+  <script src="particles.min.js"></script>
   <script>
-    // particles.js config 
-    particlesJS("particles-js", {
+    particlesJS('particles-js', {
       particles: {
         number: { value: 80 },
         color: { value: "#ffffff" },
@@ -46,15 +46,15 @@
           width: 1
         },
         move: {
-          enable: true,
-          speed: 2,
+          enable: false, // disable movement by default
+          speed: 1.5,
           direction: "none",
           out_mode: "out"
         }
       },
       interactivity: {
         events: {
-          onhover: { enable: true, mode: "repulse" },
+          onhover: { enable: true, mode: "repulse" }, // only move on hover
           onclick: { enable: false }
         },
         modes: {
@@ -64,6 +64,5 @@
       retina_detect: true
     });
   </script>
-  <script src="particles.min.js"></script>
 </body>
 </html>
