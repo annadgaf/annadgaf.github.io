@@ -92,3 +92,43 @@ footer {
     justify-content: center;
   }
 }
+
+/* Home Page Specific */
+.home-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  gap: 40px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  background-color: #d08f8f;
+  color: #fff;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .home-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    padding: 20px;
+  }
+}
