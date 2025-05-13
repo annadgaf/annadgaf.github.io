@@ -5,86 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <div id="tsparticles"></div>
+  <div id="particles-js"></div>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-  <main class="hero">
-    <h1>Contact Me!</h1>
+  <main class="page-content">
+    <h1>Contact Me</h1>
+    <p>This is the contact page content.</p>
   </main>
 
-  <footer>
-    <p>© 2025 BathSpa University. All rights reserved.</p>
-  </footer>
-
+  <script src="particles.min.js"></script>
   <script>
-    window.addEventListener("load", () => {
-      tsParticles.load("tsparticles", {
-        fullScreen: { enable: true, zIndex: -1 },
-        background: { color: "#f7d0d7" },
-        particles: {
-          number: { value: 80 },
-          color: { value: "#c25e77" },
-          shape: { type: ["circle", "line"] },
-          opacity: { value: 0.6 },
-          size: { value: 5, random: { enable: true, minimumValue: 3 } },
-          links: {
-            enable: true,
-            distance: 120,
-            color: "#c25e77",
-            opacity: 0.4,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: "none",
-            outModes: "bounce"
-          }
-        },
-        interactivity: {
-          events: {
-            onHover: { enable: true, mode: "repulse" },
-            resize: true
-          },
-          modes: {
-            repulse: { distance: 100, duration: 0.4 }
-          }
-        }
-      });
-    });
-
-    // Page scroll navigation
-    const pages = ["index.html", "about.html", "gallery.html", "contact.html"];
-    const current = location.pathname.split("/").pop() || "index.html";
-    const currentIndex = pages.indexOf(current);
-    let scrolled = false;
-
-    window.addEventListener("wheel", (e) => {
-      if (scrolled) return;
-      let nextIndex;
-      if (e.deltaY > 0 && currentIndex < pages.length - 1) {
-        nextIndex = currentIndex + 1;
-      } else if (e.deltaY < 0 && currentIndex > 0) {
-        nextIndex = currentIndex - 1;
-      }
-      if (nextIndex !== undefined) {
-        scrolled = true;
-        window.location.href = pages[nextIndex];
-      }
+    particlesJS.load('particles-js', 'particles.json', function () {
+      console.log('Particles.js loaded!');
     });
   </script>
 </body>
 </html>
+

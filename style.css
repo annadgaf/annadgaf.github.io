@@ -1,93 +1,131 @@
-/* Reset and Base Styles */
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body, html {
   height: 100%;
   font-family: 'Playfair Display', serif;
-  background: linear-gradient(to bottom right, #ffafbd, #ffc3a0);
-  overflow: hidden;
+  color: white;
+  background: linear-gradient(135deg, #ff8cbf, #ffb6d9);
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Particle Background */
-#tsparticles {
+#particles-js {
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: -1;
+  top: 0;
+  left: 0;
 }
 
-/* Navigation */
-header {
-  position: fixed;
-  top: 0;
+/* Navbar */
+nav {
   width: 100%;
-  text-align: center;
   padding: 20px 0;
-  background: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  top: 0;
+  text-align: center;
   z-index: 10;
 }
 
-nav a {
-  margin: 0 20px;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: 18px;
-  font-family: 'Playfair Display', serif;
-  padding: 8px 16px;
-  border-radius: 30px;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  border: 2px solid transparent;
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 
-nav a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+nav ul li a:hover {
+  border-color: white;
 }
 
-/* Section Layout */
-.section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-/* Content Layout */
-.content {
+/* Hero Section (Home) */
+.hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
-  padding-top: 60px; /* leave space for nav */
+  height: 100vh;
+  padding: 100px 5%;
 }
 
-/* Left Side: Name */
-.text-area {
+.hero .text {
   flex: 1;
-  color: white;
-  padding-right: 40px;
+  font-size: 2rem;
 }
 
-.text-area h1 {
-  font-size: 3.5rem;
-  line-height: 1.2;
-  font-weight: 500;
+.hero .text h1 {
+  font-size: 3rem;
+  line-height: 1.3;
 }
 
-/* Right Side: Image */
-.image-area {
+.hero .image {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.image-area img {
+.hero .image img {
   max-width: 100%;
   max-height: 80vh;
   object-fit: cover;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Content Sections */
+section {
+  min-height: 100vh;
+  padding: 120px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero .image {
+    margin-top: 30px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
