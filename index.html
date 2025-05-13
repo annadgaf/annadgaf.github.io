@@ -2,82 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anna Marielle Calangian Reyes</title>
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
       height: 100%;
       font-family: Arial, sans-serif;
+      overflow: hidden;
       scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #fff;
     }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: white;
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
-      padding: 20px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      z-index: 1000;
+      gap: 40px;
+      padding: 20px;
+      z-index: 10;
     }
 
     nav a {
-      margin: 0 20px;
+      color: #fff;
       text-decoration: none;
-      color: black;
       font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
     }
 
-    .page {
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .section {
       height: 100vh;
+      width: 100%;
       display: flex;
+      align-items: center;
       justify-content: center;
-      align-items: center;
-      padding-top: 80px;
+      position: relative;
+      scroll-snap-align: start;
+      z-index: 2;
     }
 
-    .home-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 80%;
-      max-width: 1200px;
+    #home {
+      flex-direction: row;
+      justify-content: space-around;
+      text-align: left;
+      padding: 0 5vw;
     }
 
-    .name {
-      font-size: 3rem;
-      font-weight: bold;
+    #home h1 {
+      font-size: 3em;
     }
 
-    .photo {
-      max-width: 400px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    #home img {
+      height: 60vh;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    main {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+
+    .section-content {
+      z-index: 2;
+      position: relative;
+      font-size: 2em;
     }
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <div class="page" id="home">
-    <div class="home-container">
-      <div class="name">Anna Marielle Calangian Reyes</div>
-      <img src="image.jpg" alt="Anna Marielle" class="photo" />
-    </div>
-  </div>
+  <main>
+    <section class="section" id="home">
+      <div>
+        <h1>Anna Marielle Calangian Reyes</h1>
+      </div>
+      <img src="image.jpg" alt="Anna Marielle Calangian Reyes">
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-content">About Page</div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="section-content">Gallery Page</div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-content">Contact Page</div>
+    </section>
+  </main>
+
+  <!-- particles.js script -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 }},
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3, "random": true },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 3,
+          "direction": "none",
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "grab": { "distance": 140, "line_linked": { "opacity": 1 }},
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
