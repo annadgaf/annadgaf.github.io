@@ -6,41 +6,30 @@
   <title>Anna Marielle Calangian Reyes</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@4.0.20/dist/fullpage.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js@4.0.20/dist/fullpage.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
 </head>
 <body>
   <div id="tsparticles"></div>
 
   <header>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <div id="fullpage">
-    <div class="section hero">
-      <div class="hero-left">
-        <h1>Anna Marielle Calangian Reyes</h1>
-      </div>
-      <div class="hero-right">
-        <img src="image.jpg" alt="Anna Marielle" />
-      </div>
+  <main class="center-content">
+    <div class="text-area">
+      <h1><span class="first">Anna</span> <span class="last">Reyes</span></h1>
     </div>
-  </div>
+    <div class="image-area">
+      <img src="image.jpg" alt="Anna Marielle" />
+    </div>
+  </main>
 
   <script>
-    new fullpage('#fullpage', {
-      autoScrolling: true,
-      scrollHorizontally: false,
-      navigation: false,
-      loopBottom: false,
-      loopTop: false,
-      keyboardScrolling: true
-    });
-
     tsParticles.load("tsparticles", {
       background: {
         color: "transparent"
