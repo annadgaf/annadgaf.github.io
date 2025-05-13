@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me</title>
+  <title>Gallery</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 </head>
@@ -13,8 +13,8 @@
   <nav class="floating-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About Me</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -31,23 +31,19 @@
     window.addEventListener("load", () => {
       tsParticles.load("tsparticles", {
         fullScreen: { enable: true, zIndex: -1 },
-        background: { color: "#f7d0d7" },  
+        background: { color: "#f7d0d7" },
         particles: {
-          number: { value: 150 },  
-          color: { value: "#d08f8f" },  
-          shape: { 
-            type: "polygon",  
-            polygon: {
-              sides: 4,  
-              angle: 45  
-            }
+          number: { value: 150 },
+          color: { value: "#d08f8f" },
+          shape: {
+            type: ["circle", "line"],  <!-- Circles and lines -->
           },
           opacity: { value: 0.8 },
           size: { value: 6, random: { enable: true, minimumValue: 3 } },
-          move: { 
-            enable: true, 
-            speed: 1.5,  <!-- Increased speed for more dynamic movement -->
-            outModes: "bounce" 
+          move: {
+            enable: true,
+            speed: 1.5,
+            outModes: "bounce",
           }
         },
         interactivity: {
