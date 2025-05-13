@@ -3,88 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <title>Anna Marielle Calangian Reyes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .page {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .home-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    .name {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .photo {
+      max-width: 400px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body>
-  <div id="tsparticles"></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="hero">
-    <h1>My Portfolio</h1>
-  </main>
-
-  <footer>
-    <p>© 2025 BathSpa University. All rights reserved.</p>
-  </footer>
-
-  <script>
-    window.addEventListener("load", () => {
-      tsParticles.load("tsparticles", {
-        fullScreen: { enable: true, zIndex: -1 },
-        background: { color: "#f7d0d7" },
-        particles: {
-          number: { value: 80 },
-          color: { value: "#c25e77" },
-          shape: { type: ["circle", "line"] },
-          opacity: { value: 0.6 },
-          size: { value: 5, random: { enable: true, minimumValue: 3 } },
-          links: {
-            enable: true,
-            distance: 120,
-            color: "#c25e77",
-            opacity: 0.4,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: "none",
-            outModes: "bounce"
-          }
-        },
-        interactivity: {
-          events: {
-            onHover: { enable: true, mode: "repulse" },
-            resize: true
-          },
-          modes: {
-            repulse: { distance: 100, duration: 0.4 }
-          }
-        }
-      });
-    });
-
-    // Page scroll navigation
-    const pages = ["index.html", "about.html", "gallery.html", "contact.html"];
-    const current = location.pathname.split("/").pop() || "index.html";
-    const currentIndex = pages.indexOf(current);
-    let scrolled = false;
-
-    window.addEventListener("wheel", (e) => {
-      if (scrolled) return;
-      let nextIndex;
-      if (e.deltaY > 0 && currentIndex < pages.length - 1) {
-        nextIndex = currentIndex + 1;
-      } else if (e.deltaY < 0 && currentIndex > 0) {
-        nextIndex = currentIndex - 1;
-      }
-      if (nextIndex !== undefined) {
-        scrolled = true;
-        window.location.href = pages[nextIndex];
-      }
-    });
-  </script>
+  <div class="page" id="home">
+    <div class="home-container">
+      <div class="name">Anna Marielle Calangian Reyes</div>
+      <img src="image.jpg" alt="Anna Marielle" class="photo" />
+    </div>
+  </div>
 </body>
 </html>
