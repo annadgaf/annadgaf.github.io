@@ -35,41 +35,38 @@
   <a href="about.html" class="scroll-down">▼</a>
 
   <!-- Scripts -->
-  <script src="particles.min.js"></script>
   <script>
   particlesJS("particles-js", {
     particles: {
-      number: { value: 60 },
+      number: { value: 80 },
       color: { value: "#ffffff" },
       shape: { type: "circle" },
-      opacity: { value: 0.4 },
+      opacity: { value: 0.5 },
       size: { value: 3 },
       line_linked: {
         enable: true,
-        distance: 120,
+        distance: 150,
         color: "#ffffff",
-        opacity: 0.3,
+        opacity: 0.4,
         width: 1
       },
       move: {
         enable: true,
-        speed: 1.5,
+        speed: 2,         // Slightly faster for smoother motion
         direction: "none",
-        random: false,
-        straight: false,
-        out_mode: "out",
-        attract: { enable: false }
+        out_mode: "out"
       }
     },
     interactivity: {
+      detect_on: "canvas",
       events: {
         onhover: { enable: true, mode: "repulse" },
         onclick: { enable: false }
       },
       modes: {
         repulse: {
-          distance: 200,   // Increased from 100 to 200
-          duration: 0.6    // Increased from 0.4 to 0.6
+          distance: 300,  // ⬅️ Increased from 100 → 300
+          duration: 1.2   // ⬅️ Increased for a smoother effect
         }
       }
     },
