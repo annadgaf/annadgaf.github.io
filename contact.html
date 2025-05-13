@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <!-- Particle Background -->
   <div id="tsparticles"></div>
 
   <header>
@@ -34,24 +33,17 @@
     window.addEventListener("load", () => {
       tsParticles.load("tsparticles", {
         fullScreen: { enable: true, zIndex: -1 },
-        background: {
-          color: "#f7d0d7"
-        },
+        background: { color: "#f7d0d7" },
         particles: {
-          number: { value: 100 },
-          color: { value: "#d08f8f" },
-          shape: {
-            type: ["circle", "line"]
-          },
-          opacity: { value: 0.7 },
-          size: {
-            value: 6,
-            random: { enable: true, minimumValue: 3 }
-          },
+          number: { value: 80 },
+          color: { value: "#c25e77" },
+          shape: { type: ["circle", "line"] },
+          opacity: { value: 0.6 },
+          size: { value: 5, random: { enable: true, minimumValue: 3 } },
           links: {
             enable: true,
-            distance: 130,
-            color: "#d08f8f",
+            distance: 120,
+            color: "#c25e77",
             opacity: 0.4,
             width: 1
           },
@@ -72,6 +64,13 @@
           }
         }
       });
+    });
+
+    let nextPage = "index.html"; // loops back to Home
+    window.addEventListener("scroll", () => {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        setTimeout(() => window.location.href = nextPage, 500);
+      }
     });
   </script>
 </body>
