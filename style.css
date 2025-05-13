@@ -102,15 +102,13 @@ footer {
   gap: 40px;
 }
 
-.hero-text h1 {
-  font-size: 2.8rem;
-  background-color: #d08f8f;
-  color: #fff;
-  padding: 30px;
-  border-radius: 30px;
+.hero-image img {
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  max-width: 600px;
-  text-align: left;
+  object-fit: cover;
 }
 
 .hero-image img {
