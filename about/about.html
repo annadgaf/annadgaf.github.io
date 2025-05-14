@@ -3,56 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Anna Reyes</title>
+  <title>Anna Reyes - About</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div id="particles-js"></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="#">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="/index.html" class="nav-link">Home</a></li>
+      <li><a href="/about/about.html" class="nav-link">About</a></li>
+      <li><a href="/gallery/gallery.html" class="nav-link">Gallery</a></li>
+      <li><a href="/contact/contact.html" class="nav-link">Contact</a></li>
+    </ul>
   </nav>
 
-  <section>
-    <h1>About Anna Marielle Calangian Reyes</h1>
-    <p>This is the about page.</p>
+    
+  <!-- About Section -->
+  <section class="about content">
+    <h1 class="about-title">About Me!</h1>
+    <div class="about-grid">
+      <div class="about-box">
+        <img src="images/shortbio.JPG" alt="Short Bio Image" />
+        <div class="label">Short Bio</div>
+        <div class="overlay">
+        <p>"Hey there! I’m Anna — or Anyang if you’re feeling extra close. Born in the Philippines (no, I don’t farm — shocking, I know), 
+          now living my best life in the UAE with big dreams and even bolder style. You’ll usually spot me on campus in a new aesthetic — I don’t stick to one style, I am the style. I live for experimenting with looks, serving face, and making sidewalks my runway."</p>
+      </div>
+      </div>
+      <div class="about-box">
+        <img src="images/Bio.jpg" alt="Basic Details Image" />
+        <div class="label">Basic Details</div>
+        <div class="overlay">
+        <p>Name: Anna Marielle Calangian Reyes<br>Age: 19<br>Date of Birth: 02/10/2006<br>Nationality: Filipino<br>Languages: English, Filipino</p>
+      </div>
+      </div>
+      <div class="about-box">
+        <img src="images/measure.png" alt="Measurements Image" />
+        <div class="label">Measurements</div>
+        <div class="overlay">
+           <p>Height: 5'0 / 153cm"<br>Bust/Chest: 6.5 (US)<br>Waist: 25.8 inches/ 65cm<br>Hips: 42 inches / 65cm<br>Shoe Size: US 35.5 / EU 36<br>Hair Color: Black<br>Eye Color: Dark Brown</p>
+      </div>
+      </div>
+      <div class="about-box">
+        <img src="images/like.jpg" alt="What I Like Image" />
+        <div class="label">What I Like!</div>
+        <div class="overlay">
+        <p>Dancing, vibing to R&B, binge-watching movies and series (don’t even ask what I’ve seen — it’s a scroll), and going full gamer mode on one-player games, FPS, and calm games (let’s not talk about how much time I’ve spent on Valorant and Roblox, okay?). I’m also that girl who posts on TikTok then watches herself on loop (main character energy only). Lately, I’ve been loving my healthy era — intermittent fasting, OMAD, clean eats, fruits, vitamins — I feel so good! Matcha? Yes please. Crocheting? I do that too, mostly gifting people stuff they didn’t ask for. 
+          Silver over gold always, and lowkey… emo fits have my heart (Avril Lavigne is in my DNA).</p>
+      </div>
+      </div>
+    </div>
   </section>
 
+    <!-- Scroll Down to About -->
+  <a href="/about/about.html" class="scroll-down">&#9660;</a>
+  
+          <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Main content (on top of particles) -->
+  <div class="content">
+
+  <!-- Particles Script -->
   <script src="particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {particles: {
-        number: { value: 80 },
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
         color: { value: "#ffffff" },
         shape: { type: "circle" },
-        opacity: { value: 0.5 },
+        opacity: { value: 0.4 },
         size: { value: 3 },
         line_linked: {
           enable: true,
-          distance: 150,
+          distance: 120,
           color: "#ffffff",
-          opacity: 0.4,
+          opacity: 0.3,
           width: 1
         },
         move: {
           enable: true,
-          speed: 2,
+          speed: 1.5,
           direction: "none",
-          out_mode: "out",
-          attract: {
-            enable: false
-          }
+          out_mode: "out"
         }
       },
       interactivity: {
+        detect_on: "canvas",
         events: {
           onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" }
+          onclick: { enable: false },
+          resize: true
         },
         modes: {
-          repulse: { distance: 100 },
-          push: { particles_nb: 4 }
+          repulse: { distance: 150, duration: 0.4 }
         }
       },
       retina_detect: true
@@ -60,4 +106,3 @@
   </script>
 </body>
 </html>
-
