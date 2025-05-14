@@ -4,22 +4,17 @@
   box-sizing: border-box;
 }
 
+/* General page layout */
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Playfair Display', serif;
   background: linear-gradient(to right, #f27474, #f9b4b4);
   color: white;
   overflow-x: hidden;
-  position: relative;
-  min-height: 100vh;
 }
 
-/* Particle Background */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
 
 /* Navigation */
 .navbar {
@@ -101,6 +96,23 @@ body {
   object-fit: cover;
 }
 
+/* Particle background */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto; /* Important for hover interaction */
+}
+
+/* Content sits above particles */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
 /* Scroll Arrow */
 .scroll-down {
   display: block;
@@ -112,6 +124,15 @@ body {
   animation: bounce 2s infinite;
   text-decoration: none;
 }
+
+/* Subtext under hero name */
+.subtext {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #ffecec;
+  font-weight: 500;
+}
+
 
 @keyframes bounce {
   0%, 100% {
@@ -133,3 +154,5 @@ body {
     font-size: 2rem;
   }
 }
+
+
