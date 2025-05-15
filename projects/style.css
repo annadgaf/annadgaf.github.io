@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to right, #f27474, #f9b4b4);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navbar .nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #ffe6e6;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #f3eeee;
+}
+
+/* Project section base */
+.project {
+  margin-bottom: 5rem;
+}
+
+.project-header.centered {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-logo {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  margin-bottom: -3rem;
+  margin-top: -5rem;
+}
+
+.project-description,
+.project-description.solo {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+/* Landscape Image (full width) */
+.project-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .project-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+}
