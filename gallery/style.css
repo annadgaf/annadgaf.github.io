@@ -60,6 +60,23 @@ body {
   transform: scaleX(1);
 }
 
+/* Particle background */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto; /* Important for hover interaction */
+}
+
+/* Content sits above particles */
+.content {
+  position: relative;
+  z-index: 2;
+}
+
 /* Gallery */
 .gallery {
   padding: 7rem 2rem 4rem;
@@ -108,6 +125,10 @@ body {
   display: block;
   border-radius: 15px;
   transition: transform 0.4s ease;
+}
+
+.grid-item.landscape {
+  grid-column: span 2;
 }
 
 .grid-item:hover img,
@@ -184,5 +205,15 @@ body {
 
   .section h2 {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr); /* fallback to 2 columns */
+  }
+
+  .grid-item.landscape {
+    grid-column: span 2; /* still full width in 2-column grid */
   }
 }

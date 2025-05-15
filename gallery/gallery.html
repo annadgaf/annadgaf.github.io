@@ -42,20 +42,65 @@
         <div class="overlay"><p>HeadShots/Close-up Body Shot (w/o makeup)</p></div>
       </div>
       <div class="grid-item">
-        <img src="images/anna6.jpeg" alt="Best Shot 2">
+        <img src="images/anna8.jpeg" alt="Best Shot 2">
         <div class="overlay"><p>Full Body Shot</p></div>
       </div>
       <div class="grid-item">
-        <img src="images/anna8.jpeg" alt="Best Shot 1">
+        <img src="images/anna7.jpeg" alt="Best Shot 1">
         <div class="overlay"><p>Full Body Shot</p></div>
       </div>
       <div class="grid-item">
-        <img src="images/anna9.jpeg" alt="Best Shot 1">
+        <img src="images/anna6.jpeg" alt="Best Shot 1">
         <div class="overlay"><p>Full Body Shot</p></div>
       </div>
       <div class="grid-item">
         <img src="images/anna10.jpeg" alt="Best Shot 2">
         <div class="overlay"><p>Full Body Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna11.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>3/4 Angle Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna12.jpeg" alt="Best Shot 2">
+        <div class="overlay"><p>3/4 Angle Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna13.jpeg" alt="Best Shot 2">
+        <div class="overlay"><p>3/4 Angle Shot</p></div>
+      </div>  
+      <div class="grid-item">
+        <img src="images/anna14.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>3/4 Angle Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna15.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>Fashion/ Editorial Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna16.jpeg" alt="Best Shot 2">
+        <div class="overlay"><p>Fashion/ Editorial Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna17.jpeg" alt="Best Shot 2">
+        <div class="overlay"><p>Fashion/ Editorial Shot</p></div>
+      </div>  
+      <div class="grid-item">
+        <img src="images/anna14.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>Fashion/ Editorial Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna18.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>Candid Shot</p></div>
+      </div>
+      <!-- LANDSCAPE IMAGE SPANNING 2 COLUMNS -->
+      <div class="grid-item landscape">
+        <img src="images/landscape.jpeg" alt="Landscape Wide Shot">
+        <div class="overlay"><p>Candid Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna19.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>Candid Shot</p></div>
       </div>
     </div>
   </div>
@@ -119,6 +164,54 @@
     <video id="lightbox-video" controls></video>
   </div>
 </div>
+
+    <!-- Scroll Down to About -->
+  <a href="/about/about.html" class="scroll-down">&#9660;</a>
+  
+          <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Main content (on top of particles) -->
+  <div class="content">
+
+  <!-- Particles Script -->
+  <script src="particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.4 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#ffffff",
+          opacity: 0.3,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: false },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 150, duration: 0.4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 
 <script src="script.js"></script>
 </body>
