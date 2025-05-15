@@ -60,53 +60,62 @@ body {
 }
 
 .projects-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
 }
 
 .page-title {
   text-align: center;
   font-size: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
   color: #f3eeee;
 }
 
 /* Project section base */
 .project {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem; /* reduce space between each full section */
 }
-
 .project-header.centered {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
+.project-description.solo {
+  margin-top: 15rem;
+}
 .project-logo {
   width: 500px;
-  height: 500px;
+  height: auto;
   object-fit: contain;
-  margin-bottom: -3rem;
-  margin-top: -5rem;
+  margin-bottom: 0.8rem;
 }
 
 .project-description,
 .project-description.solo {
   font-size: 1.5rem;
+  color: #f4f4f4;
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #ddd;
+  padding: 0 0rem;
+  margin-bottom: 1.2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* Landscape Image (full width) */
+.project-photo {
+  padding: 0 7rem; /* Adds left and right spacing */
+}
+
 .project-photo img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 0;
   object-fit: cover;
+  margin-top: 0; /* Remove space between description and image */
 }
-
 /* Responsive */
 @media (max-width: 768px) {
   .page-title {
