@@ -11,18 +11,37 @@ document.querySelectorAll('.grid-item').forEach(item => {
       lightboxImg.style.display = 'block';
       lightboxVideo.style.display = 'none';
     } else if (video) {
-      lightboxVideo.src = video.src;
-      lightboxVideo.style.display = 'block';
+      // Clone the video element to reset its state
+      const newVideo = video.cloneNode(true);
+      newVideo.controls = true;
+      newVideo.autoplay = true;
+      newVideo.style.maxWidth = '100%';
+      newVideo.style.maxHeight = '100%';
+      newVideo.style.borderRadius = '10px';
+
       lightboxImg.style.display = 'none';
+      lightboxVideo.replaceWith(newVideo);
+      newVideo.id = 'lightbox-video'; // Maintain the ID for future access
     }
 
     lightbox.style.display = 'flex';
   });
 });
 
+// Close the lightbox and stop video playback
 document.querySelector('.lightbox .close').addEventListener('click', () => {
   const lightbox = document.getElementById('lightbox');
-  document.getElementById('lightbox-img').src = '';
-  document.getElementById('lightbox-video').src = '';
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxVideo = document.getElementById('lightbox-video');
+
+  lightboxImg.src = '';
+  lightboxImg.style.display = 'none';
+
+  // Stop video by replacing it with a fresh node
+  const newVideo = lightboxVideo.cloneNode(false);
+  newVideo.id = 'lightbox-video';
+  newVideo.controls = true;
+  lightboxVideo.replaceWith(newVideo);
+
   lightbox.style.display = 'none';
 });

@@ -27,19 +27,19 @@
     <div class="masonry-grid">
       <div class="grid-item">
         <img src="images/anna.jpeg" alt="Best Shot 1">
-        <div class="overlay"><p>HeadShots/Close-up Body Shot (w makeup)</p></div>
+        <div class="overlay"><p>HeadShots/Close-up Shot (w makeup)</p></div>
       </div>
       <div class="grid-item">
         <img src="images/anna2.jpeg" alt="Best Shot 2">
-        <div class="overlay"><p>HeadShots/Close-up Body Shot (w makeup)</p></div>
+        <div class="overlay"><p>HeadShots/Close-up Shot (w makeup)</p></div>
       </div>
       <div class="grid-item">
         <img src="images/anna3.jpeg" alt="Best Shot 2">
-        <div class="overlay"><p>HeadShots/Close-up Body Shot (w/o makeup)</p></div>
+        <div class="overlay"><p>HeadShots/Close-up Shot (w/o makeup)</p></div>
       </div>  
       <div class="grid-item">
         <img src="images/anna4.jpeg" alt="Best Shot 1">
-        <div class="overlay"><p>HeadShots/Close-up Body Shot (w/o makeup)</p></div>
+        <div class="overlay"><p>HeadShots/Close-up Shot (w/o makeup)</p></div>
       </div>
       <div class="grid-item">
         <img src="images/anna8.jpeg" alt="Best Shot 2">
@@ -143,19 +143,42 @@
     </div>
   </div>
 
-  <div class="section" id="tiktok">
-    <h2>TikTok / Video Content</h2>
-    <div class="masonry-grid">
-      <div class="grid-item">
-        <video controls src="videos/video1.mp4"></video>
-        <div class="overlay"><p>Quick dance snippet</p></div>
-      </div>
-      <div class="grid-item">
-        <video controls src="videos/video2.mp4"></video>
-        <div class="overlay"><p>Outfit transition challenge</p></div>
-      </div>
+<div class="section" id="tiktok">
+  <h2>TikTok Videos</h2>
+  <div class="masonry-grid">
+    <div class="grid-item video-thumb">
+      <video muted preload="metadata" poster="images/Outfits.JPG">
+        <source src="videos/Outfits.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"><p>Outfits</p></div>
+      <div class="play-button">&#9658;</div>
+    </div>
+
+    <div class="grid-item video-thumb">
+      <video muted preload="metadata" poster="images/Lipsyncing.JPG">
+        <source src="videos/LipSyncing.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"><p>Lip Syncing</p></div>
+      <div class="play-button">&#9658;</div>
+    </div>
+
+    <div class="grid-item video-thumb">
+      <video muted preload="metadata" poster="images/Dancing.JPG">
+        <source src="videos/Dancing.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"><p>Dancing</p></div>
+      <div class="play-button">&#9658;</div>
+    </div>
+
+    <div class="grid-item video-thumb">
+      <video muted preload="metadata" poster="images/Dancing2.JPG">
+        <source src="videos/Dancing2.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"><p>Dancing</p></div>
+      <div class="play-button">&#9658;</div>
     </div>
   </div>
+</div>
 
   <div class="section" id="bts">
     <h2>Behind the Scenes / Fun Extras</h2>
@@ -228,6 +251,33 @@
       retina_detect: true
     });
   </script>
+
+<script>
+  document.querySelectorAll('.video-thumb').forEach(container => {
+    const video = container.querySelector('video');
+    const playButton = container.querySelector('.play-button');
+
+    container.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation(); // Prevents lightbox/gallery interference
+
+      // Pause all other videos
+      document.querySelectorAll('video').forEach(v => {
+        if (v !== video) {
+          v.pause();
+          v.removeAttribute('controls');
+          const pb = v.closest('.video-thumb')?.querySelector('.play-button');
+          if (pb) pb.style.display = 'block';
+        }
+      });
+
+      // Play this one
+      video.play();
+      video.setAttribute('controls', true);
+      if (playButton) playButton.style.display = 'none';
+    });
+  });
+</script>
 
 <script src="script.js"></script>
 </body>
