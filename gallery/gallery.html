@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna Reyes - Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="/index.html" class="nav-link">Home</a></li>
+      <li><a href="/about/about.html" class="nav-link">About</a></li>
+      <li><a href="/gallery/gallery.html" class="nav-link">Gallery</a></li>
+      <li><a href="/contact/contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+<section class="gallery content">
+  <h1 class="gallery-title">Gallery</h1>
+
+  <div class="section" id="best-shots">
+    <h2>Best Shots</h2>
+    <div class="masonry-grid">
+      <div class="grid-item">
+        <img src="images/anna.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>HeadShots/Close-up Body Shot (w makeup)</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna2.jpeg" alt="Best Shot 2">
+        <div class="overlay"><p>HeadShots/Close-up Body Shot (w makeup)</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna3.jpeg" alt="Best Shot 2">
+        <div class="overlay"><p>HeadShots/Close-up Body Shot (w/o makeup)</p></div>
+      </div>  
+      <div class="grid-item">
+        <img src="images/anna4.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>HeadShots/Close-up Body Shot (w/o makeup)</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna6.jpeg" alt="Best Shot 2">
+        <div class="overlay"><p>Full Body Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna8.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>Full Body Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna9.jpeg" alt="Best Shot 1">
+        <div class="overlay"><p>Full Body Shot</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna10.jpeg" alt="Best Shot 2">
+        <div class="overlay"><p>Full Body Shot</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="outfits">
+    <h2>Outfit Variety</h2>
+    <div class="masonry-grid">
+      <div class="grid-item">
+        <img src="images/anna.jpg" alt="Outfit 1">
+        <div class="overlay"><p>Casual daytime look</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/anna.jpg" alt="Outfit 2">
+        <div class="overlay"><p>Streetwear inspired</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/Bio.jpg" alt="Outfit 3">
+        <div class="overlay"><p>Sporty yet chic</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/Bio.jpg" alt="Outfit 4">
+        <div class="overlay"><p>Evening elegance</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="tiktok">
+    <h2>TikTok / Video Content</h2>
+    <div class="masonry-grid">
+      <div class="grid-item">
+        <video controls src="videos/video1.mp4"></video>
+        <div class="overlay"><p>Quick dance snippet</p></div>
+      </div>
+      <div class="grid-item">
+        <video controls src="videos/video2.mp4"></video>
+        <div class="overlay"><p>Outfit transition challenge</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="bts">
+    <h2>Behind the Scenes / Fun Extras</h2>
+    <div class="masonry-grid">
+      <div class="grid-item">
+        <img src="images/Bio.jpg" alt="BTS">
+        <div class="overlay"><p>Laughs between takes</p></div>
+      </div>
+      <div class="grid-item">
+        <img src="images/Bio.jpg" alt="Fun">
+        <div class="overlay"><p>Goofy outtakes and bloopers</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <div class="lightbox-content">
+    <img id="lightbox-img" />
+    <video id="lightbox-video" controls></video>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
