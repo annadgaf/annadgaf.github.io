@@ -118,18 +118,6 @@ body {
   z-index: 1;
 }
 
-/* Scroll Arrow */
-.scroll-down {
-  display: block;
-  text-align: center;
-  font-size: 2rem;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  color: white;
-  animation: bounce 2s infinite;
-  text-decoration: none;
-}
-
 /* Subtext under hero name */
 .subtext {
   font-size: 1.2rem;
@@ -138,6 +126,16 @@ body {
   font-weight: 500;
 }
 
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f5dede;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  font-size: 0.9rem;
+}
 
 @keyframes bounce {
   0%, 100% {

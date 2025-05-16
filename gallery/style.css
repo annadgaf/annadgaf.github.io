@@ -197,6 +197,17 @@ body {
   z-index: 1000;
 }
 
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f5dede;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  font-size: 0.9rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .gallery-title {
