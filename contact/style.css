@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to right, #f27474, #f9b4b4);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navbar .nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #ffe6e6;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Particle background */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto; /* Important for hover interaction */
+}
+
+/* Content sits above particles */
+.content {
+  position: static;
+  z-index: 1;
+}
+
+
+/* Contact Page */
+.contact-page {
+  padding: 6rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.contact-section {
+  text-align: center;
+}
+
+.basic-info h2,
+.social-links h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.basic-info p,
+.message-text p,
+.social-links ul li a {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* SOCIAL LINKS SECTION – UPDATED */
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.social-links li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffe6e6;
+}
+
+.social-links img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.6));
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+/* Message Section */
+.message-text p {
+  font-size: 1.2rem;
+  line-height: 2;
+  max-width: 700px;
+  margin: auto;
+  font-style: italic;
+}
+
+/* Signature */
+.signature-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.signature-bg {
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+.signature-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.signature-overlay {
+  position: relative;
+  width: 320px; /* adjust based on image size */
+  margin: 3rem auto;
+}
+
+.signature-overlay .bg-image {
+  width: 100%;
+  display: block;
+  opacity: 50%;
+  filter: brightness(0.9); /* optional styling */
+}
+
+.signature-overlay .signature-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%; /* adjust as needed */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f5dede;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 600px) {
+  .signature-overlay {
+    width: 90%;
+  }
+
+  .signature-overlay .signature-image {
+    width: 80%;
+  }
+}
