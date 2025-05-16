@@ -185,7 +185,7 @@ a {
 
 .signature-overlay {
   position: relative;
-  width: 320px; /* adjust based on image size */
+  width: 150px; /* adjust based on image size */
   margin: 3rem auto;
 }
 
@@ -200,7 +200,7 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 70%; /* adjust as needed */
+  width: 170%; /* adjust as needed */
   transform: translate(-50%, -50%);
   pointer-events: none;
 }

@@ -109,7 +109,7 @@ body {
 
 .project-description,
 .project-description.solo {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #f4f4f4;
   text-align: center;
   padding: 0 0rem;
@@ -129,7 +129,7 @@ body {
   max-width: 95vw;
   margin: 2rem auto;
   border-radius: 0;
-  padding: 0 7rem; /* Adds left and right spacing */
+  padding: 0 15rem; /* Adds left and right spacing */
 }
 
 
