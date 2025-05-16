@@ -123,12 +123,11 @@ body {
 /* Landscape Image (full width) */
 
 .project-photo.landscape {
-  position: relative;
-  padding: 0 1rem;
+  width: 100%;
   overflow: hidden;
-  max-width: 95vw;
-  margin: 2rem auto;
-  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
   padding: 0 15rem; /* Adds left and right spacing */
 }
 
@@ -136,8 +135,8 @@ body {
 .project-photo.landscape img {
   width: 100%;
   height: auto;
-  display: block;
   object-fit: cover;
+  display: block;
   transition: transform 0.4s ease;
 }
 
